@@ -1,0 +1,49 @@
+{
+  "name": "@chatlychat/widget-testing",
+  "version": "0.1.2",
+  "description": "Assert against the Chatly widget embed in CI, with no network and no account. Zero dependencies.",
+  "license": "MIT",
+  "author": "Chatly",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.spec.*",
+    "README.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.src.json --noEmit && tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.10",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chatlychat/chatly-widget-testing.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chatlychat/chatly-widget-testing/issues"
+  },
+  "homepage": "https://github.com/chatlychat/chatly-widget-testing#readme"
+}

@@ -1,0 +1,16 @@
+{
+  "$comment": "The DOM-free check, the same mechanical rule @chatlychat/core uses. lib is ES2022 ONLY and `types` is empty, so a `window`, `document`, `localStorage` or `process` reference in non-spec source is a compile error rather than a code-review item. This kit runs in jsdom, in page.evaluate and in a bare Node process, so it must name none of those globals and take them as arguments instead — see src/host.ts.",
+  "extends": "@livechat/config/tsconfig/library.json",
+  "compilerOptions": {
+    "lib": ["ES2022"],
+    "types": [],
+    "outDir": "dist",
+    "rootDir": "src",
+    "moduleResolution": "Bundler",
+    "module": "ESNext",
+    "noEmit": true,
+    "tsBuildInfoFile": "dist/.src.tsbuildinfo"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["src/**/*.spec.ts"]
+}
