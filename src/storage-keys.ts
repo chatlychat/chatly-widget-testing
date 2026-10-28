@@ -19,7 +19,7 @@
  */
 
 /** The short names, as `chatly:<name>[:<publicId>]`. */
-export const CHATLY_STORAGE_NAMES = ['vt', 'vh', 'xid', 'vr', 'drag', 'seen', 'utm'] as const;
+export const CHATLY_STORAGE_NAMES = ['la', 'vt', 'vh', 'xid', 'vr', 'drag', 'seen', 'utm'] as const;
 
 export type ChatlyStorageName = (typeof CHATLY_STORAGE_NAMES)[number];
 
@@ -39,6 +39,12 @@ export const CHATLY_STORAGE_SPECS: ReadonlyArray<{
   readonly store: 'localStorage' | 'sessionStorage';
   readonly scoped: boolean;
 }> = [
+  /*
+   * The launcher-appearance cache (2026-10-28), FIRST because the manifest
+   * lists it first: it is read before first paint so the launcher stops
+   * changing colour and width when `init` lands.
+   */
+  { name: 'la', store: 'localStorage', scoped: true },
   { name: 'vt', store: 'localStorage', scoped: true },
   { name: 'vh', store: 'localStorage', scoped: true },
   { name: 'xid', store: 'localStorage', scoped: true },

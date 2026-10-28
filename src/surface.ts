@@ -29,6 +29,8 @@
  * makes when it asserts the built bundle's surface.
  */
 export const CHATLY_METHODS = [
+  'beforeMessageDisplay',
+  'beforeMessageSent',
   'close',
   'deleteCustomAttribute',
   'destroy',
@@ -45,6 +47,7 @@ export const CHATLY_METHODS = [
   'removeLabel',
   'reportAction',
   'reset',
+  'setCart',
   'setContext',
   'setCustomAttributes',
   'setLabel',
@@ -57,6 +60,7 @@ export const CHATLY_METHODS = [
   'startConversation',
   'toggle',
   'track',
+  'trackSale',
   'unmount',
 ] as const;
 
