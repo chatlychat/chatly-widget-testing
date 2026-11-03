@@ -1,5 +1,13 @@
 # @chatlychat/widget-testing
 
+## 0.1.7 — 2026-11-03
+
+- `CHATLY_METHODS` gains `page` and `logout`. Both were on `ChatlyApi` in
+  `@chatlychat/sdk-js` already, so `parity.spec.ts` — which reads that file off
+  disk rather than trusting this list — was red for both. A kit whose method
+  surface is short of the real embed's is the one failure this package exists
+  to prevent.
+
 ## 0.1.6 — 2026-10-28
 
 - `la` in `CHATLY_STORAGE_NAMES` and `CHATLY_STORAGE_SPECS`: the launcher-appearance cache the widget reads BEFORE first paint, so a consent harness that enumerates our storage keys was missing one. Same list the API's `storage-declaration` contract publishes.

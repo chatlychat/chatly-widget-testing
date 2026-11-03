@@ -369,7 +369,7 @@ export function installChatlyMock(win: HostWindow, options: ChatlyMockOptions = 
         /*
          * Recorded and otherwise inert: `mount`, `unmount`, `on`, `off`,
          * `dismiss`, `setTheme`, `setOffset`, `setConsent`, `setContext`, `reportAction`,
-         * `registerPushToken`, `getUnreadCount`, `hasSession`.
+         * `registerPushToken`, `getUnreadCount`, `hasSession`, `page`, `logout`.
          *
          * Deliberately not modelled rather than modelled badly. A kit that
          * pretended to implement `setTheme` would invite an assertion about
